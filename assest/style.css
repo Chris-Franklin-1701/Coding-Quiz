@@ -98,3 +98,20 @@ body {
 .hide {
     display: none;
 }
+
+#questions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: black;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+}
