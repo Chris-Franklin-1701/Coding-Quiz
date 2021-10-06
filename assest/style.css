@@ -2,11 +2,7 @@
     box-sizing: border-box;
     font-family: "Helvetica", "Arial", "sans-serif";
 }
-:root {
-    --correct: green;
-    --wrong: red;
 
-}
 body {
     padding: 0;
     margin: 0;
@@ -29,6 +25,10 @@ body {
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .fixed-header {
@@ -38,12 +38,18 @@ body {
     background: inherit;
     top: 0;
 }
-.highscores {
+#highscores {
     vertical-align: top;
     text-align: left;
     color: yellow;
     width: 50vw;
     padding-left: 15px;
+    border: none;
+    background-color: inherit;
+    border-radius: 10px;
+    padding: 5px 10px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .timer {
@@ -54,34 +60,38 @@ body {
     padding-right: 50px;
 }
 
-.btn-column {
+/*.btn-column {
     display: grid;
     gap: 10px;
     margin: 15px;
-}
+}*/
 
-.btn {
+button {
     border: 1px solid rgb(11, 11, 153);
     background-color: blue;
     border-radius: 10px;
     padding: 5px 10px;
     color: white;
     outline: none;
+    display:inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
 }
 
-.btn:hover {
+button:hover {
     border-color: black;
     border-width: medium;
 }
 
-.btn-correct {
+/*.btn-correct {
     background-color:var(--correct);
     color: black;
 }
 
 .btn-wrong {
     background-color: var(--wrong);
-}
+}*/
 
 .start-btn {
     font-size: 1.5rem;
@@ -112,6 +122,93 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
+    color: black;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
     color: black;
+}
+#question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result {
+    display: none;
+}
+
+#endGame {
+    text-align: center;
+    display: none;
+    flex-direction:column;
+    align-items: center;
+}
+
+#highScore{
+    height: 1.5rem;
+    border: groove 2px;
+}
+
+#highscorePage{
+    display: none;
+    width: 50%;
+    border: solid;
+    border-color: silver;
+    border-bottom-style: groove;
+    padding-bottom: .3rem;
+    background: lightsteelblue;
+}
+
+#highscoreHeader{
+    display:flex;
+    justify-content: space-around;
+    border-bottom-style: outset;
+    margin-bottom: .5rem;
+    background-color: #5e6df1;
+    color: #eeeeee;
+    font-family: sans-serif;
+}
+#savedScoreContainer{
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#initials{
+    margin: .5rem;
+    height: 1.75rem;
+}
+
+#highscoreInitials{
+    display: inline-block;
+    padding-left: 9.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#highscoreScore{
+    float: right;
+    padding-right: 8.75rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#finalScore{
+    padding-bottom: 0.5rem;
+    font-size: x-large;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#endGame-btns{
+    display: none;
 }
