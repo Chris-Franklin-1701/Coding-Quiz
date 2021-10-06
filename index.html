@@ -18,20 +18,20 @@
             <div id="question-container">
                 <div id="questions">Coding Quiz Challenge!</div>
                 <h2 id="h2">Try to answer the following questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by 5sec each.</h2>
-                <div id="answer-btn"></div>
+                <div id="answer-btn" class="btn-column">
                     <button id="a" onclick="checkAnswer('a')">Answer 1</button>
                     <button id="b" onclick="checkAnswer('b')">Answer 2</button>
                     <button id="c" onclick="checkAnswer('c')">Answer 3</button>
                     <button id="d" onclick="checkAnswer('d')">Answer 4</button>
+                </div>
                 <div id="result"></div>
                 <div class="start">
                     <button id="start-btn">Start</button>
                 </div>
             </div>
             <div id="endGame">
-                <div id="finalScore">
-                    <input type="text" size = "40" placeholder="Enter you initials." name="intials" id="initials"/>
-                </div>
+                <div id="finalScore"></div>
+                <div><input type="text" size = "40" placeholder="Enter you initials." name="intials" id="initials"/></div>
                 <button id="submit-btn" class="submit-btn btn hide">Submit</button>
             </div>
             <div id="savedScoreContainer">

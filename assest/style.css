@@ -60,11 +60,10 @@ body {
     padding-right: 50px;
 }
 
-/*.btn-column {
-    display: grid;
+.btn-column {
     gap: 10px;
     margin: 15px;
-}*/
+}
 
 button {
     border: 1px solid rgb(11, 11, 153);
@@ -73,10 +72,10 @@ button {
     padding: 5px 10px;
     color: white;
     outline: none;
-    display:inline-block;
+    gap: 10px;
+    margin: 15px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-
 }
 
 button:hover {
@@ -93,7 +92,7 @@ button:hover {
     background-color: var(--wrong);
 }*/
 
-.start-btn {
+#start-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 15px;
@@ -131,7 +130,7 @@ h3 {
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    color: black;
+    color:yellow;
 }
 #question-container {
     display: flex;
@@ -157,22 +156,24 @@ h3 {
 
 #highscorePage{
     display: none;
+    flex-wrap: wrap;
     width: 50%;
     border: solid;
-    border-color: silver;
-    border-bottom-style: groove;
+    border-color: red;
+    border-bottom-style: solid;
     padding-bottom: .3rem;
-    background: lightsteelblue;
+    background: white;
 }
 
 #highscoreHeader{
     display:flex;
     justify-content: space-around;
     border-bottom-style: outset;
-    margin-bottom: .5rem;
-    background-color: #5e6df1;
-    color: #eeeeee;
+    margin-bottom: 1.5rem;
+    background-color: blue;
+    color: yellow;
     font-family: sans-serif;
+    width: 100%;
 }
 #savedScoreContainer{
     height: 100%;
@@ -190,16 +191,17 @@ h3 {
 
 #highscoreInitials{
     display: inline-block;
-    padding-left: 9.5rem;
+    padding-left: 3.5rem;
     font-family: sans-serif;
     font-weight: bold;
 }
 
 #highscoreScore{
     float: right;
-    padding-right: 8.75rem;
+    padding-right: 3.75rem;
     font-family: sans-serif;
     font-weight: bold;
+    margin-left: 135px;
 }
 
 #finalScore{
@@ -207,8 +209,17 @@ h3 {
     font-size: x-large;
     font-family: sans-serif;
     font-weight: bold;
+    align-items:center;
+    justify-content: center;
 }
 
 #endGame-btns{
     display: none;
+}
+
+li{
+    padding-bottom: 3px;
+    color:blueviolet;
+    text-shadow: 1.5px 1px 3px black;
+    list-style-type: none;
 }

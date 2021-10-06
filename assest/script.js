@@ -140,10 +140,11 @@ function checkAnswer(answer){
 }
 
 function showScore(){
-    questionContainerEl.style.display = "none"
+    questionContainerEl.style.display = "none";
     endGameDiv.style.display = "flex";
+    submitBtn.style.display = "block";
     clearInterval(timerInterval);
-    //highscoreInputName.value = "";
+    highscoreName.value = "";
     finalScoreEl.innerHTML = "You got " + (score+secondsLeft) + " out of " + (questions.length+75) + " total possible points!";
 }
 
@@ -168,6 +169,16 @@ submitBtn.addEventListener("click", function highscore(){
     }
 });
 
+function showHighscore(){
+    questionContainerEl.style.display = "none"
+    endGameDiv.style.display = "none";
+    savedScoreContainer.style.display = "flex";
+    savedScoreDiv.style.display = "flex";
+    endGameBtns.style.display = "flex";
+
+    generateHighscores();
+}
+
 function generateHighscores(){
     highscorePlayerName.innerHTML = "";
     highscoreScore.innerHTML = "";
@@ -180,16 +191,6 @@ function generateHighscores(){
         highscorePlayerName.appendChild(newNameSpan);
         highscoreScore.appendChild(newScoreSpan);
     }
-}
-
-function showHighscore(){
-    questionContainerEl.style.display = "none"
-    endGameDiv.style.display = "none";
-    savedScoreContainer.style.display = "flex";
-    savedScoreDiv.style.display = "block";
-    endGameBtns.style.display = "flex";
-
-    generateHighscores();
 }
 
 function clearScore(){
