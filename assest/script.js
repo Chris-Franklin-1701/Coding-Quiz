@@ -1,9 +1,9 @@
+// Global variables
 var startButton = document.getElementById("start-btn")
 var answerBtnEl = document.getElementById("answer-btn")
 var questionsEl = document.getElementById("questions")
 var questionContainerEl = document.getElementById("question-container")
 var h2El = document.getElementById("h2")
-//var quizBody = document.getElementById("quiz");
 var resultsEl = document.getElementById("result");
 var finalScoreEl = document.getElementById("finalScore");
 var endGameDiv = document.getElementById("endGame");
@@ -75,6 +75,7 @@ var timerInterval;
 
 startButton.addEventListener("click", startGame)
 
+// Timer and set time
 var timeEl = document.querySelector(".timer");
 var secondsLeft = 75;
 
@@ -128,12 +129,12 @@ function checkAnswer(answer){
         alert("That Is Correct!");
         currentQuestionsIndex++;
         generateQuestion();
-        //display in the results div that the answer is correct.
+        //display if the answer is correct.
     }else if (answer !== correct && currentQuestionsIndex !== finalQuestionIndex){
         alert("That Is Incorrect.")
         currentQuestionsIndex++;
         generateQuestion();
-        //display in the results div that the answer is wrong.
+        //display if the answer is wrong.
     }else{
         showScore();
     }
@@ -145,7 +146,8 @@ function showScore(){
     submitBtn.style.display = "block";
     clearInterval(timerInterval);
     highscoreName.value = "";
-    finalScoreEl.innerHTML = "You got " + (score+secondsLeft) + " out of " + (questions.length+75) + " total possible points!";
+    score=secondsLeft
+    finalScoreEl.innerHTML = "You got " + score + " out of " + (questions.length+75) + " total possible points!";
 }
 
 submitBtn.addEventListener("click", function highscore(){
@@ -161,6 +163,7 @@ submitBtn.addEventListener("click", function highscore(){
             score: score
         };
         endGameDiv.style.display = "none";
+        endGameBtns.style.display = "flex"
         savedScoreContainer.style.display = "flex";
         savedScoreDiv.style.display = "block";
         savedScores.push(currentHighscore);
