@@ -7,6 +7,10 @@ var h2El = document.getElementById("h2")
 
 let shuffledQuestions, currentQuestionsIndex
 startButton.addEventListener("click", startGame)
+answerBtnEl.addEventListener("click", () => {
+    currentQuestionsIndex++
+    showNextQuestion()
+})
 
 var timeEl = document.querySelector(".timer");
 var secondsLeft = 75;
@@ -45,15 +49,15 @@ function showNextQuestion() {
 function showNewQuestion(question) {
     questionsEl.innerText = question.question
     question.answers.forEach(answer => {
-        var button = document.createElement("button");
-        button.innerText = answer.text;
-        button.classList.add("btn");
+        var button = document.createElement("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
         if (answer.correct) {
             button.dataset.correct = answer.correct
-        };
-        button.addEventListener("click", pickAnswer);
-        answerBtnEl.appendChild(button);
-    });
+        }
+        button.addEventListener("click", pickAnswer)
+        answerBtnEl.appendChild(button)
+    })
 }
 
 // resets the page, to allow for filling answer buttons and question with new text
@@ -67,13 +71,13 @@ function resetPage() {
 // selects answers from the question array below
 function pickAnswer(e) {
     var pickedButton = e.target
-    var correct = pickedButton.dataset.answers
+    var correct = pickedButton.dataset.correct
     setStatusClass(document.body, correct)
     Array.from(answerBtnEl.children).forEach(button => {
-        setStatusClass(button, button.dataset.answers)
+        setStatusClass(button, button.dataset.correct)
     })
     if (shuffledQuestions.length > currentQuestionsIndex + 1) {
-        
+        showNewQuestion
     }else{
         startButton.innerText = "Restart"
         startButton.classList.remove("hide")
