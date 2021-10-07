@@ -86,7 +86,11 @@ function setTime() {
         
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
-            //endgame somehow
+            questionContainerEl.style.display = "none";
+            savedScoreContainer.style.display = "none";
+            endGameBtns.style.display = "flex";
+
+
         }
     }, 1000);
 }
@@ -125,7 +129,7 @@ function checkAnswer(answer){
     correct = questions[currentQuestionsIndex].correctAnswer;
 
     if (answer === correct && currentQuestionsIndex !== finalQuestionIndex){
-        //score++;
+        score++;
         alert("That Is Correct!");
         currentQuestionsIndex++;
         generateQuestion();
@@ -146,8 +150,7 @@ function showScore(){
     submitBtn.style.display = "block";
     clearInterval(timerInterval);
     highscoreName.value = "";
-    score=secondsLeft
-    finalScoreEl.innerHTML = "You got " + score + " out of " + (questions.length+75) + " total possible points!";
+    finalScoreEl.innerHTML = "You got " + (score+secondsLeft) + " out of " + (questions.length+75) + " total possible points!";
 }
 
 submitBtn.addEventListener("click", function highscore(){
@@ -206,6 +209,8 @@ function replayQuiz(){
     savedScoreContainer.style.display = "none";
     endGameDiv.style.display = "none";
     questionContainerEl.style.display = "flex";
+    endGameBtns.style.display = "none";
+    startButton.classList.remove("hide");
     timeLeft = 75;
     score = 0;
     currentQuestionsIndex = 0;
